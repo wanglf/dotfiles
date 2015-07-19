@@ -1,18 +1,18 @@
-" set cursorline
+" begin vundle configuration
+" pre job: git clone https://github.com/gmarik/Vundle.vim.git
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 " set the runtime path to include Vundle and initialize
+" ~/.vim/bundle/Vundle.vim
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-" Plugin 'gmarik/Vundle.vim'
-" Plugin 'git://github.com/pangloss/vim-javascript'
-" Plugin 'git://github.com/othree/html5.vim'
-Plugin 'file:///root/.vim/bundle/Vundle.vim'            
+Plugin 'gmarik/Vundle.vim'
+
 Plugin 'file:///root/.vim/bundle/vim-javascript'        
 Plugin 'file:///root/.vim/bundle/html5.vim'             
 Plugin 'file:///root/.vim/bundle/emmet-vim'             
@@ -24,6 +24,13 @@ Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
 
+" markdown vim mode
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+" disable the folding configuration:
+" let g:vim_markdown_folding_disabled=1
+" Highlight YAML frontmatter as used by Jekyll:
+let g:vim_markdown_frontmatter=1
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
