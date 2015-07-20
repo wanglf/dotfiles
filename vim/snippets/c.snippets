@@ -243,3 +243,187 @@ snippet gpl
 	 */
 
 	${0}
+
+## self defined snippets
+snippet basic
+	#include <stdio.h>
+	#include <stdlib.h>
+	int
+	main() {
+		${0}
+		return EXIT_SUCCESS;
+	}
+
+snippet socketsrv
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <arpa/inet.h>
+	#include <sys/socket.h>
+	#include <string.h>
+
+	#define BACKLOG 5
+	#define BUFSIZE 1024
+
+	int
+	main(int argc, char* argv[]) {
+		int srvsock;
+		int clientsock;
+		struct sockaddr_in srvaddr;
+		struct sockaddr_in clientaddr;
+		unsigned short srvport;
+		int clientlen;
+
+		srvport = atoi(argv[1]);
+
+		if ((srvsock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
+			perror("socket() failed");
+		}
+
+		memset(&srvaddr, 0, sizeof(srvaddr));
+		srvaddr.sin_family = AF_INET;
+		srvaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+		srvaddr.sin_port = htons(srvport);
+
+		if (bind(srvsock, (struct sockaddr *) &srvaddr, sizeof(srvaddr)) < 0) {
+			perror("bind() failed");
+		}
+
+		if (listen(srvsock, BACKLOG) < 0) {
+			perror("listen() failed");
+		}
+
+		for (;;) {
+			clientlen = sizeof(clientaddr);
+
+			if ((clientsock = accept(srvsock, (struct sockaddr *) &clientaddr, &clientlen)) < 0)
+				perror("accept() failed");
+
+			char buf[BUFSIZE];
+			int recvsize;
+
+			if ( (recvsize = recv(clientsock, buf, BUFSIZE, 0)) < 0) {
+				perror("recv() failed");
+			}
+
+			while (recvsize > 0) {
+
+				if (send(clientsock, buf, recvsize, 0) != recvsize) {
+					perror("send() failed");
+					exit(EXIT_FAILURE);
+				}
+
+				if ( (recvsize = recv(clientsock, buf, BUFSIZE, 0)) < 0) {
+					perror("recv() failed");
+				}
+
+				printf("buf: %s\n", buf);
+			}
+
+
+			printf("Handling client %s\n", inet_ntoa(clientaddr.sin_addr));
+
+		}
+		${0}
+		return EXIT_SUCCESS;
+	}
+
+snippet socketclient
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <arpa/inet.h>
+	#include <sys/socket.h>
+	#include <netdb.h>
+	#include <string.h>
+
+	#define BACKLOG 5
+	#define BUFSIZE 1024
+
+	int hostname_to_ip(char *hostname , char *ip);
+
+	int
+	main(int argc, char* argv[]) {
+		int sock;
+		struct sockaddr_in srvaddr;
+		unsigned short srvport;
+		char srvip[100];
+		char *sendcontent;
+		char buf[BUFSIZE];
+		unsigned int contentlen;
+		int bytesrecv, totalbytesrecv;
+		
+		if ((argc < 3) || (argc > 4)) {
+		   fprintf(stderr, "Usage: %s <Server IP|Hostname> <Echo Word> [<Echo Port>]\n",
+		           argv[0]);
+		   exit(EXIT_FAILURE);
+		}
+		
+		hostname_to_ip(argv[1], srvip);
+		sendcontent = argv[2];
+		
+		if (argc == 4)
+		    srvport = atoi(argv[3]);
+		else
+		    srvport = 1234; 
+		
+		if ((sock = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)) < 0) {
+			perror("socket() failed");
+			exit(EXIT_FAILURE);
+		}
+
+		memset(&srvaddr, 0, sizeof(srvaddr));
+		srvaddr.sin_family      = AF_INET;
+		srvaddr.sin_addr.s_addr = inet_addr(srvip);
+		srvaddr.sin_port        = htons(srvport);
+		
+		if (connect(sock, (struct sockaddr *) &srvaddr, sizeof(srvaddr)) < 0) {
+		    perror("connect() failed");
+			exit(EXIT_FAILURE);
+		}
+		
+		contentlen = strlen(sendcontent);
+		
+		if (send(sock, sendcontent, contentlen, 0) != contentlen) {
+		    perror("send() sent a different number of bytes than expected");
+			exit(EXIT_FAILURE);
+		}
+		
+		totalbytesrecv = 0;
+		printf("Received: ");
+		while (totalbytesrecv < contentlen) {
+		    if ((bytesrecv = recv(sock, buf, BUFSIZE - 1, 0)) <= 0)
+		        perror("recv() failed or connection closed prematurely");
+		    totalbytesrecv += bytesrecv;
+		    buf[bytesrecv] = '\0';
+		    printf("%s", buf);
+		}
+
+		close(sock);
+		${0}
+		return EXIT_SUCCESS;
+	}
+
+	int hostname_to_ip(char *hostname , char *ip)
+	{
+	    int sockfd;
+	    struct addrinfo hints, *servinfo, *p;
+	    struct sockaddr_in *h;
+	    int rv;
+	
+	    memset(&hints, 0, sizeof hints);
+	    hints.ai_family = AF_UNSPEC;
+	    hints.ai_socktype = SOCK_STREAM;
+	
+	    if ( (rv = getaddrinfo( hostname , "http" , &hints , &servinfo)) != 0) {
+	        fprintf(stderr, "getaddrinfo: %s\n", gai_strerror(rv));
+	        return 1;
+	    }
+	
+	    for(p = servinfo; p != NULL; p = p->ai_next) {
+	        h = (struct sockaddr_in *) p->ai_addr;
+	        strcpy(ip , inet_ntoa( h->sin_addr ) );
+	    }
+	
+	    freeaddrinfo(servinfo);
+	    return 0;
+	}
+	
