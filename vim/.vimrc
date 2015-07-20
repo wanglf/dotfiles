@@ -13,10 +13,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'file:///root/.vim/bundle/vim-javascript'        
-Plugin 'file:///root/.vim/bundle/html5.vim'             
-Plugin 'file:///root/.vim/bundle/emmet-vim'             
-Plugin 'file:///root/.vim/bundle/nerdtree' 
+Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'mattn/emmet-vim'
+Plugin 'pangloss/vim-javascript'
+Plugin 'othree/html5.vim'
+
+" fugitive for git
+Plugin 'tpope/vim-fugitive'
 
 " snipMate plugin
 Plugin 'MarcWeber/vim-addon-mw-utils'
@@ -31,6 +34,12 @@ Plugin 'plasticboy/vim-markdown'
 " let g:vim_markdown_folding_disabled=1
 " Highlight YAML frontmatter as used by Jekyll:
 let g:vim_markdown_frontmatter=1
+
+" nerdtree plugin
+" autocmd vimenter * NERDTree
+" close nerdtree when the last window left is nerdtree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+map <C-n> :NERDTreeToggle<CR>
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -63,11 +72,6 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "
-" autocmd vimenter * NERDTree
-" close nerdtree when the last window left is nerdtree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-map <C-n> :NERDTreeToggle<CR>
 
 " set t_Co=256
 set autoindent
