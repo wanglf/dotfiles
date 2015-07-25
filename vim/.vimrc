@@ -35,6 +35,9 @@ Plugin 'plasticboy/vim-markdown'
 " Highlight YAML frontmatter as used by Jekyll:
 let g:vim_markdown_frontmatter=1
 
+" set snips_author variable
+let g:snips_author='wanglifeng'
+
 " nerdtree plugin
 " autocmd vimenter * NERDTree
 " close nerdtree when the last window left is nerdtree
@@ -79,3 +82,8 @@ set cindent
 set smartindent
 set ts=4
 set shiftwidth=4
+" used by fugitive to show current git branch
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+"detect and display in right encoding
+set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
