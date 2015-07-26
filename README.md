@@ -1,10 +1,8 @@
 #Dotfiles#
-----
 
 Welcome to my world.
 
 #Contents#
-----
 
 - zsh configuration
 - vim configuration, snippets
