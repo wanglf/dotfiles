@@ -1,5 +1,7 @@
 " begin vundle configuration
-" pre job: git clone https://github.com/gmarik/Vundle.vim.git
+" pre job: 
+" 1. mkdir -p ~/.vim/bundle/ && cd ~/.vim/bundle/
+" 2. git clone https://github.com/gmarik/Vundle.vim.git
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -14,6 +16,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
