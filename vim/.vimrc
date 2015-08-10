@@ -24,6 +24,21 @@ Plugin 'othree/html5.vim'
 " fugitive for git
 Plugin 'tpope/vim-fugitive'
 
+" youcompleteme 
+" Plugin 'Valloric/YouCompleteMe'
+
+" Vim plugin, provides insert mode auto-completion for quotes, parens,
+" brackets, etc.
+Plugin 'Raimondi/delimitMate'
+
+" Syntax checking hacks for vim
+" Plugin 'scrooloose/syntastic'
+
+" lean & mean status/tabline for vim that's light as air
+Plugin 'bling/vim-airline'
+" Plugin 'edkolev/tmuxline.vim'
+
+
 " snipMate plugin
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
@@ -77,7 +92,28 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
+
 "
+"settings for plugin scrooloose/syntastic
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+
+" vim-airline
+" Automatically displays all buffers when there's only one tab open.
+let g:airline#extensions#tabline#enabled = 1
+"let g:airline_powerline_fonts = 1
+set laststatus=2
+
+" Separators can be configured independently for the tabline, so here is how
+" you can define "straight" tabs:
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
 
 " set t_Co=256
 set autoindent
@@ -85,6 +121,8 @@ set cindent
 set smartindent
 set ts=4
 set shiftwidth=4
+
+" set expandtab
 " used by fugitive to show current git branch
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
