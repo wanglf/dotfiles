@@ -1,0 +1,10 @@
+host gitsrv
+	port 60022
+host linode
+	port 60022
+host github.com
+	User git
+	ProxyCommand nc -x localhost:8000 %h %p
+host bitbucket.org
+	User git
+	ProxyCommand nc -x localhost:8000 %h %p

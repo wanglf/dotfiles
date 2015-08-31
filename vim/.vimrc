@@ -14,6 +14,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
+" Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'https://github.com/scrooloose/nerdtree.git'
 Plugin 'scrooloose/nerdcommenter'
@@ -107,24 +108,27 @@ filetype plugin indent on    " required
 " vim-airline
 " Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 1
 set laststatus=2
-
-" Separators can be configured independently for the tabline, so here is how
-" you can define "straight" tabs:
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
-
-" set t_Co=256
-set autoindent
-set cindent
-set smartindent
-set ts=4
-set shiftwidth=4
+nnoremap <b :bp<CR>
+nnoremap >b :bn<CR>
 
 " set expandtab
 " used by fugitive to show current git branch
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
+" Separators can be configured independently for the tabline, so here is how
+" you can define "straight" tabs:
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
 "detect and display in right encoding
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+set autoindent
+set cindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set t_Co=256
+set tags=tags;
+set tags+=~/.vim/systags

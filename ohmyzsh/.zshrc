@@ -16,7 +16,7 @@ alias lb01='ssh -p 60022 root@lb01'
 alias lb02='ssh -p 60022 root@lb02'
 alias realsrv01='ssh -p 60051 root@realsrv01'
 alias realsrv02='ssh -p 60052 root@realsrv02'
-alias linode='ssh -p 60022 root@103.3.63.84'
+alias linode='ssh -p 60022 root@linode'
 alias vocb='vi /root/vocabulary'
 
 # Set to this to use case-sensitive completion
