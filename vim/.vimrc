@@ -21,6 +21,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
+Plugin 'file:///root/.vim/bundle/vim-perl'
 
 " fugitive for git
 Plugin 'tpope/vim-fugitive'
