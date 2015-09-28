@@ -13,15 +13,15 @@ call vundle#begin()
 "call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
 " Plugin 'altercation/vim-colors-solarized'
 
-Plugin 'https://github.com/scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
-Plugin 'file:///root/.vim/bundle/vim-perl'
+Plugin 'vim-perl/vim-perl'
 
 " fugitive for git
 Plugin 'tpope/vim-fugitive'
