@@ -13,12 +13,8 @@ alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vi='vim'
 alias vip='ssh -p 60022 root@vip'
 alias lb01='ssh -p 60022 root@lb01'
-alias lb02='ssh -p 60022 root@lb02'
-alias realsrv01='ssh -p 60051 root@realsrv01'
-alias realsrv02='ssh -p 60052 root@realsrv02'
-alias linode='ssh -p 60022 root@linode'
 alias linode='ssh -p 50022 root@linode'
-alias vocb='vi /root/vocabulary'
+alias vocb='vi /usr/share/games/fortune/vocabulary'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -62,6 +58,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 export PATH="/usr/lib64/qt-3.3/bin:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin"
+export PATH="$PATH:/usr/local/texlive/2015/bin/x86_64-linux"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
@@ -85,12 +82,15 @@ PATH=$PATH:$JAVA_HOME/bin:$JRE_HOME/bin
 PATH=$PATH:/usr/libexec/git-core/
 CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar:$JRE_HOME/lib
 export JAVA_HOME JRE_HOME PATH CLASSPATH 
-
 export M2_HOME=/opt/apache-maven-3.3.3
 export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 
 export PATH=$PATH:$M2
+export PS1="%{$fg_bold[yellow]%}%n@%m:${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
+export TERM="xterm-256color"
+#for crontab
+export EDITOR="vim"
 
 echo
 echo "=============== Quote Of The Day ==============="

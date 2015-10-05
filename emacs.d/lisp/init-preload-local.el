@@ -4,19 +4,24 @@
 (package-initialize)
 
 ;; set theme to leuven
+(require-package 'leuven-theme)
 (load-theme 'leuven t)
 
 ;; for evil-mode
+(require-package 'evil)
 (require 'evil)
 (evil-mode )
 ;; auto complete
+(require-package 'auto-complete)
 (require 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
 
+(require-package 'yasnippet)
 (require 'yasnippet)
 (yas-global-mode 1)
 
+(require-package 'auto-complete-c-headers)
 (defun my:ac-c-header-init ()
   (require 'auto-complete-c-headers)
   (add-to-list 'ac-sources 'ac-source-c-headers)
@@ -33,10 +38,14 @@
 (add-hook 'c-mode-hook 'my:ac-c-header-init)
 
 ; Fix iedit bug in Mac
+(require-package 'iedit)
 (define-key global-map (kbd "C-c ;") 'iedit-mode)
 
 ;; start flymake-google-cpplint-load
 ;; let's define a function for flymake initialization
+
+(require-package 'flymake-google-cpplint)
+(require-package 'flymake-cursor)
  (defun my:flymake-google-init ()
    (require 'flymake-google-cpplint)
    (custom-set-variables
@@ -54,6 +63,7 @@
 ; 											   'c/c++-googlelint 'append)))
 
 ;; start google-c-style with emacs
+(require-package 'google-c-style)
 (require 'google-c-style)
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)

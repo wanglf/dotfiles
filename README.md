@@ -1,9 +1,10 @@
 #Dotfiles#
 
-Welcome to my world.
+Here are some configuration files for various tools. Such as vim, emacs, git, ssh, zsh, tmux etc.
 
 #Log#
 
+- [2015-10-05] setup.sh
 - [2015-10-05] emacs.d
 - [2015-08-31] git config
 - [2015-08-31] ssh config
