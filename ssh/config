@@ -1,4 +1,4 @@
-host gitsrv
+host websrv
 	port 60022
 host linode
 	port 60022

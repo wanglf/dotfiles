@@ -2,6 +2,6 @@
 	name = wanglf
 	email = wlfqware@gmail.com
 [http]
-	proxy = socks5://127.0.0.1:8000
+	proxy = socks5://websrv:8000
 [https]
-	proxy = socks5://127.0.0.1:8000
+	proxy = socks5://websrv:8000
