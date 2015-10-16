@@ -33,6 +33,14 @@
          :auto-preamble f
          )
 
+        ("org-work"
+         :base-directory "/opt/git/work.org.git/"
+         :base-extension "org"
+         :publishing-directory "/var/www/html/work/"
+         :publishing-function org-html-publish-to-html
+         :auto-preamble f
+         )
+
         ))
 
 ;; latex minted package for org-mode
