@@ -56,3 +56,8 @@ crontab -l > ~/mycron
 echo "0 * * * * cd /usr/share/games/fortune && /usr/sbin/strfile vocabulary vocabulary.dat > /dev/null 2>&1" >> ~/mycron
 crontab ~/mycron
 rm ~/mycron
+
+# adobe fonts for texlive
+#mkdir -p /usr/share/fonts/adobe
+#cp /opt/download/Adobe*.otf /usr/share/fonts/adobe
+#fc-cache -f -v
