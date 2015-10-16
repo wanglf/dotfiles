@@ -61,3 +61,7 @@ rm ~/mycron
 #mkdir -p /usr/share/fonts/adobe
 #cp /opt/download/Adobe*.otf /usr/share/fonts/adobe
 #fc-cache -f -v
+# adobe font for texlive
+#sudo mkdir -p /usr/share/fonts/adobe
+#sudo mv *.otf /usr/share/fonts/adobe
+#sudo fc-cache -fsv

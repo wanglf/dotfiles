@@ -10,6 +10,7 @@
 (require 'org)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
+(define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-cb" 'org-iswitchb)
 (setq org-log-done 'time)
 
@@ -29,6 +30,14 @@
          :base-directory "/opt/git/wiki.git/"
          :base-extension "org"
          :publishing-directory "/var/www/html/wiki/"
+         :publishing-function org-html-publish-to-html
+         :auto-preamble f
+         )
+
+        ("org-work"
+         :base-directory "/opt/git/work.org.git/"
+         :base-extension "org"
+         :publishing-directory "/var/www/html/work/"
          :publishing-function org-html-publish-to-html
          :auto-preamble f
          )
