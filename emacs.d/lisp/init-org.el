@@ -42,6 +42,29 @@
          :auto-preamble f
          )
 
+        ("org-blog"
+         ;; Path to your org files.
+         :base-directory "/opt/git/org-blog.git/"
+         :base-extension "org"
+
+         ;; Path to your Jekyll project.
+         :publishing-directory "/var/www/blog.org/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t ;; Only export section between <body> </body>
+         )
+
+
+        ("org-blog-static"
+         :base-directory "/opt/git/org-blog.git/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+         :publishing-directory "/var/www/blog.org/"
+         :recursive t
+         :publishing-function org-publish-attachment)
+
+        ("blog" :components ("org-blog" "org-blog-static"))
         ))
 
 ;; latex minted package for org-mode
