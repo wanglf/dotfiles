@@ -164,11 +164,14 @@ typical word processor."
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates
-      `(("t" "todo" entry (file "")  ; "" => org-default-notes-file
+      `(("t" "Todo" entry (file "/opt/git/private.org.git/inbox.org")  ; "" => org-default-notes-file
          "* NEXT %?\n%U\n" :clock-resume t)
-        ("n" "note" entry (file "")
+        ("n" "Note" entry (file "/opt/git/private.org.git/note.org")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
+        ("j" "Journal" entry (file+datetree "/opt/git/private.org.git/journal.org")
+         "* %?")
         ))
+
 
 
 
@@ -176,8 +179,9 @@ typical word processor."
 
 (setq org-refile-use-cache nil)
 
-                                        ; Targets include this file and any file contributing to the agenda - up to 5 levels deep
+;;; Targets include this file and any file contributing to the agenda - up to 5 levels deep
 (setq org-refile-targets '((nil :maxlevel . 5) (org-agenda-files :maxlevel . 5)))
+
 
 (after-load 'org-agenda
   (add-to-list 'org-agenda-after-show-hook 'org-show-entry))
@@ -195,7 +199,7 @@ typical word processor."
     (org-refile goto default-buffer rfloc msg)))
 
 ;; Targets start with the file name - allows creating level 1 tasks
-;;(setq org-refile-use-outline-path (quote file))
+;; (setq org-refile-use-outline-path (quote file))
 (setq org-refile-use-outline-path t)
 (setq org-outline-path-complete-in-steps nil)
 
@@ -214,6 +218,12 @@ typical word processor."
       (quote (("NEXT" :inherit warning)
               ("PROJECT" :inherit font-lock-string-face))))
 
+
+(setq org-agenda-files
+      '("/opt/git/private.org.git/inbox.org"
+        "/opt/git/private.org.git/task.org"
+        "/opt/git/private.org.git/project.org"
+        "/opt/git/private.org.git/finished.org"))
 
 
 ;;; Agenda views
@@ -425,4 +435,13 @@ typical word processor."
      (sqlite . t))))
 
 
+
+(add-to-list 'org-latex-classes
+             '("ctexart"
+               "\\documentclass{ctexart}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 (provide 'init-org)
