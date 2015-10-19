@@ -6,6 +6,7 @@
 ;; set theme to leuven
 (require-package 'leuven-theme)
 (load-theme 'leuven t)
+(setq org-src-fontify-natively t)
 
 ;; for evil-mode
 (require-package 'evil)
