@@ -41,14 +41,13 @@
          :publishing-function org-html-publish-to-html
          :auto-preamble f
          )
-
-        ("org-blog"
+        ("org-jekyll"
          ;; Path to your org files.
-         :base-directory "/opt/git/org-blog.git/"
+         :base-directory "/opt/git/org-jekyll.git/"
          :base-extension "org"
 
          ;; Path to your Jekyll project.
-         :publishing-directory "/var/www/blog.org/"
+         :publishing-directory "/var/www/org-jekyll/"
          :recursive t
          :publishing-function org-html-publish-to-html
          :headline-levels 4
@@ -57,14 +56,14 @@
          )
 
 
-        ("org-blog-static"
-         :base-directory "/opt/git/org-blog.git/"
+        ("org-jekyll-static"
+         :base-directory "/opt/git/org-jekyll.git/"
          :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
-         :publishing-directory "/var/www/blog.org/"
+         :publishing-directory "/var/www/org-jekyll/"
          :recursive t
          :publishing-function org-publish-attachment)
 
-        ("blog" :components ("org-blog" "org-blog-static"))
+        ("jekyll" :components ("org-jekyll" "org-jekyll-static"))
         ))
 
 ;; latex minted package for org-mode
