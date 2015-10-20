@@ -6,6 +6,7 @@
 ;; set theme to leuven
 (require-package 'leuven-theme)
 (load-theme 'leuven t)
+(setq org-src-fontify-natively t)
 
 ;; for evil-mode
 (require-package 'evil)
@@ -82,5 +83,28 @@
 ;; you can use system-include-path for setting up the system header file locations.
 ;; turn on automatic reparsing of open buffers in semantic
 (global-semantic-idle-scheduler-mode 1)
+
+;; add auctex and set default tex command to xelatex
+(require-package 'auctex)
+(require-package 'auctex-latexmk)
+
+(add-hook 'LaTeX-mode-hook (lambda()
+                             (add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex%(mode)%' %t" TeX-run-TeX nil t))
+                             (setq TeX-command-default "XeLaTeX")
+                             (setq TeX-save-query  nil )
+                             (setq TeX-show-compilation t)
+                             (setq TeX-auto-save t)
+                             (setq TeX-parse-self t)
+                             (setq-default TeX-master nil)
+                             ))
+
+
+(require-package 'powerline)
+(require 'powerline)
+(powerline-default-theme)
+
+(require-package 'powerline-evil)
+(require 'powerline-evil)
+
 
 (provide 'init-preload-local)
