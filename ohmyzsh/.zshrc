@@ -88,7 +88,7 @@ export MAVEN_OPTS="-Xms256m -Xmx512m"
 
 export PATH=$PATH:$M2
 export PS1="%{$fg_bold[yellow]%}%n@%m:${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
-export TERM="xterm-256color"
+#export TERM="xterm-256color"
 #for crontab
 export EDITOR="vim"
 
