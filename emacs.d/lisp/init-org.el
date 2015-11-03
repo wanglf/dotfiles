@@ -41,7 +41,29 @@
          :publishing-function org-html-publish-to-html
          :auto-preamble f
          )
+        ("org-jekyll"
+         ;; Path to your org files.
+         :base-directory "/opt/git/org-jekyll.git/"
+         :base-extension "org"
 
+         ;; Path to your Jekyll project.
+         :publishing-directory "/var/www/org-jekyll/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 4
+         :html-extension "html"
+         :body-only t ;; Only export section between <body> </body>
+         )
+
+
+        ("org-jekyll-static"
+         :base-directory "/opt/git/org-jekyll.git/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|php"
+         :publishing-directory "/var/www/org-jekyll/"
+         :recursive t
+         :publishing-function org-publish-attachment)
+
+        ("jekyll" :components ("org-jekyll" "org-jekyll-static"))
         ))
 
 ;; latex minted package for org-mode
@@ -197,10 +219,10 @@ typical word processor."
 
 
 (setq org-agenda-files
-      '("/opt/git/private.org.git/inbox.org"
-        "/opt/git/private.org.git/task.org"
-        "/opt/git/private.org.git/project.org"
-        "/opt/git/private.org.git/finished.org"))
+      '("~/git/private.org.git/inbox.org"
+        "~/git/private.org.git/task.org"
+        "~/git/private.org.git/project.org"
+        "~/git/private.org.git/finished.org"))
 
 
 ;;; Agenda views
