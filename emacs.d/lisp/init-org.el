@@ -8,6 +8,8 @@
 
 ;; for org-mode
 (require 'org)
+;; for line wrap
+(add-hook 'org-mode-hook (lambda () (setq truncate-lines nil)))
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
