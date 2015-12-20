@@ -1,3 +1,4 @@
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/"))
@@ -7,6 +8,14 @@
 (require-package 'leuven-theme)
 (load-theme 'leuven t)
 (setq org-src-fontify-natively t)
+
+;; for simpleclip
+;; Press super-c to copy without affecting the kill ring.
+;; Press super-x or super-v to cut or paste.
+;; On OS X, use ⌘-c, ⌘-v, ⌘-x.
+(require-package 'simpleclip)
+(require 'simpleclip)
+(simpleclip-mode 1)
 
 ;; for evil-mode
 (require-package 'evil)
