@@ -43,6 +43,15 @@
          :publishing-function org-html-publish-to-html
          :auto-preamble f
          )
+
+        ("org-booknotes"
+         :base-directory "~/git/public.org.git/booknotes/"
+         :base-extension "org"
+         :publishing-directory "/var/www/html/booknotes/"
+         :publishing-function org-html-publish-to-html
+         :auto-preamble f
+         )
+
         ("org-jekyll"
          ;; Path to your org files.
          :base-directory "/opt/git/org-jekyll.git/"
