@@ -4,6 +4,8 @@ Here are some configuration files for various tools. Such as vim, emacs, git, ss
 
 #Log#
 
+- [2016-04-23] iterm2 solarized color scheme
+- [2016-04-23] securecrt solarized color scheme
 - [2015-10-05] setup.sh
 - [2015-10-05] emacs.d
 - [2015-08-31] git config
