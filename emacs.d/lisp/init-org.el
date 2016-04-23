@@ -21,7 +21,7 @@
 (setq org-publish-project-alist
       '(
         ("org-notes"
-         :base-directory "/opt/git/org.git/"
+         :base-directory "/root/git/private.org.git/"
          :base-extension "org"
          :publishing-directory "/var/www/html/org/"
          :publishing-function org-html-publish-to-html
@@ -427,7 +427,7 @@ typical word processor."
 (after-load 'org
   (org-babel-do-load-languages
    'org-babel-load-languages
-   `((R . t)
+   '((R . t)
      (ditaa . t)
      (dot . t)
      (emacs-lisp . t)
@@ -437,6 +437,7 @@ typical word processor."
      (ledger . t)
      (ocaml . nil)
      (octave . t)
+     (perl . t)
      (python . t)
      (ruby . t)
      (screen . nil)

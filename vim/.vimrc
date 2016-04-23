@@ -14,7 +14,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-" Plugin 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
@@ -133,3 +133,5 @@ set shiftwidth=4
 set t_Co=256
 set tags=tags;
 set tags+=~/.vim/systags
+set background=dark
+colorscheme solarized

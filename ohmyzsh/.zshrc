@@ -5,7 +5,8 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
@@ -15,6 +16,7 @@ alias vip='ssh -p 60022 root@vip'
 alias lb01='ssh -p 60022 root@lb01'
 alias linode='ssh -p 50022 root@linode'
 alias vocb='vi /usr/share/games/fortune/vocabulary'
+alias pubjekyll='cd /root/git/org-jekyll && make posts && cd /var/www/www.wanglifeng.info && jekyll build && cd /root/git/org-jekyll' 
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -51,7 +53,7 @@ DISABLE_AUTO_UPDATE="false"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git ruby perl python grep)
+plugins=(git ruby perl python grep vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,7 +89,7 @@ export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 
 export PATH=$PATH:$M2
-export PS1="%{$fg_bold[yellow]%}%n@%m:${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
+#export PS1="%{$fg_bold[yellow]%}%n@%m:${ret_status}%{$fg_bold[green]%}%p %{$fg[cyan]%}%c %{$fg_bold[blue]%}$(git_prompt_info)%{$fg_bold[blue]%} % %{$reset_color%}"
 #export TERM="xterm-256color"
 #for crontab
 export EDITOR="vim"
@@ -96,7 +98,7 @@ echo
 echo "=============== Quote Of The Day ==============="
 echo
 #fortune 60% vocabulary 10% fortunes 10% chinese 10% tang300 10% song100 | cowsay -f $(ls /usr/share/cowsay/ | shuf -n1)
-fortune 99% vocabulary 1% fortunes
+fortune 99% vocabulary 1% fortunes 
 echo
 echo "================================================"
 echo
