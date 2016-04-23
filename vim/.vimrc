@@ -125,6 +125,7 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "detect and display in right encoding
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+syntax enable
 set autoindent
 set cindent
 set smartindent
