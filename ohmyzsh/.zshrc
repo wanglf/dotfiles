@@ -6,8 +6,6 @@ ZSH_THEME="agnoster"
 plugins=(git ruby perl python grep vi-mode)
 source $ZSH/oh-my-zsh.sh
 
-# dirclors from git@github.com:seebi/dircolors-solarized.git
-eval `dircolors ~/dircolors.256dark`
 
 # source custom configuration
 if [ -f ~/.customrc ]; then

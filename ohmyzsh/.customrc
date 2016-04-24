@@ -1,3 +1,6 @@
+# dirclors from git@github.com:seebi/dircolors-solarized.git
+eval `dircolors ~/dircolors.256dark`
+
 DISABLE_AUTO_UPDATE="true"
 # Example aliases
 alias vi='vim'
