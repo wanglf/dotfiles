@@ -25,6 +25,9 @@ export M2_HOME=/opt/apache-maven-3.3.3
 export M2=$M2_HOME/bin
 export MAVEN_OPTS="-Xms256m -Xmx512m"
 export PATH=$PATH:$M2
+if [ "$TERM" != "screen-256color" ]; then
+	export TERM="xterm-256color"
+fi
 
 stty erase "^?"
 #stty erase ^H
