@@ -18,6 +18,7 @@ Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'chase/vim-ansible-yaml'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'othree/html5.vim'
@@ -122,6 +123,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 " you can define "straight" tabs:
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:ansible_options = {'ignore_blank_lines': 0}
 
 "detect and display in right encoding
 set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
@@ -129,7 +131,12 @@ syntax enable
 set autoindent
 set cindent
 set smartindent
+" insert space characters whenever the tab key is pressed,
+set expandtab
+" control the number of space characters that will be inserted when the tab
+" key is pressed
 set tabstop=4
+" change the number of space characters inserted for indentation
 set shiftwidth=4
 set t_Co=256
 set tags=tags;
