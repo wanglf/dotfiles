@@ -79,6 +79,15 @@
 
 ;; latex minted package for org-mode
 (require 'ox-latex)
+(add-to-list 'org-latex-classes
+             '("ctexart"
+               "\\documentclass{ctexart}"
+               ("\\section{%s}" . "\\section*{%s}")
+               ("\\subsection{%s}" . "\\subsection*{%s}")
+               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+               ("\\paragraph{%s}" . "\\paragraph*{%s}")
+               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+
 (setq org-latex-listings 'minted)
 (add-to-list 'org-latex-packages-alist '("" "minted"))
 
@@ -447,12 +456,4 @@ typical word processor."
 
 
 
-(add-to-list 'org-latex-classes
-             '("ctexart"
-               "\\documentclass{ctexart}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
 (provide 'init-org)
