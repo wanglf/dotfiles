@@ -5,3 +5,6 @@
 	proxy = socks5://websrv:8000
 [https]
 	proxy = socks5://websrv:8000
+
+[alias]
+    push-for-review = push gerrit HEAD:refs/for/master
