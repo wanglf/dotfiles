@@ -115,5 +115,6 @@
 (require-package 'powerline-evil)
 (require 'powerline-evil)
 
+(require 'init-elpy)
 
 (provide 'init-preload-local)
