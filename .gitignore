@@ -5,3 +5,4 @@ emacs.d/eshell/
 emacs.d/.session
 emacs.d/history
 emacs.d/org-clock-save.el
+emacs.d/lisp/init-gnus.el

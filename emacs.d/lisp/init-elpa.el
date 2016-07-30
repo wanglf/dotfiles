@@ -11,7 +11,6 @@
 (require 'package)
 
 
-
 ;;; Standard package repositories
 
 (when (< emacs-major-version 24)
@@ -20,15 +19,18 @@
 
 ;; We include the org repository for completeness, but don't normally
 ;; use it.
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+                                                  ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
+(add-to-list 'package-archives '("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/"))
+;; (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
 
-(when (< emacs-major-version 24)
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+;; (when (< emacs-major-version 24)
+;;   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
 
 ;;; Also use Melpa for most packages
-(add-to-list 'package-archives `("melpa" . ,(if (< emacs-major-version 24)
-                                                "http://melpa.org/packages/"
-                                              "https://melpa.org/packages/")))
+;; (add-to-list 'package-archives `("melpa" . ,(if (< emacs-major-version 24)
+;;                                                "http://melpa.org/packages/"
+;;                                              "https://melpa.org/packages/")))
 
 
 

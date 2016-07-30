@@ -1,8 +1,8 @@
 
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.milkbox.net/packages/"))
-(package-initialize)
+;; (require 'package)
+;; (add-to-list 'package-archives
+;;             '("melpa" . "http://melpa.milkbox.net/packages/"))
+;; (package-initialize)
 
 ;; set theme to leuven
 (require-package 'leuven-theme)

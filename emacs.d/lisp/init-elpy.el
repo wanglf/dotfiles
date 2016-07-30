@@ -1,21 +1,8 @@
-;; PYTHON CONFIGURATION
-;; --------------------------------------
-
-(require 'package)
-(add-to-list 'package-archives
-             '("elpy" . "https://jorgenschaefer.github.io/packages/"))
-
-(package-initialize)
-
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;;; PYTHON ELPY CONFIGURATION
 
 (defvar myPackages
-  '(better-defaults
-;;    ein
-    elpy
+  '(elpy
     flycheck
-;;    material-theme
     py-autopep8))
 
 (mapc #'(lambda (package)
@@ -24,9 +11,10 @@
       myPackages)
 
 (elpy-enable)
-(elpy-use-ipython)
-;; (add-hook 'python-mode-hook 'jedi:setup)
-;; (setq jedi:complete-on-dot t)                 ; optional
+;;(elpy-use-ipython)
+;;(setq elpy-rpc-backend "jedi")
+;;(add-hook 'python-mode-hook 'jedi:setup)
+;;(setq jedi:complete-on-dot t)                 ; optional
 
 ;; use flycheck not flymake with elpy
 (when (require 'flycheck nil t)
