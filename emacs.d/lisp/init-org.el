@@ -450,7 +450,7 @@ typical word processor."
      (python . t)
      (ruby . t)
      (screen . nil)
-     (shell . t)
+     (,(if (locate-library "ob-sh") 'sh 'shell) . t)
      (sql . nil)
      (sqlite . t))))
 
