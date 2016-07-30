@@ -42,3 +42,5 @@ site-lisp/package/
 /viper
 /semanticdb
 ac-comphist.dat
+ede-projects.el
+places
