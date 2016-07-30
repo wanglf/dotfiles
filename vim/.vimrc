@@ -143,4 +143,5 @@ set tags=tags;
 set tags+=~/.vim/systags
 set background=dark
 colorscheme solarized
-set co=80
+autocmd filetype crontab setlocal nobackup nowritebackup
+" set co=80
