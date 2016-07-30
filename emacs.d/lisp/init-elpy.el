@@ -2,6 +2,7 @@
 
 (defvar myPackages
   '(elpy
+    jedi
     flycheck
     py-autopep8))
 
@@ -11,7 +12,9 @@
       myPackages)
 
 (elpy-enable)
-;;(elpy-use-ipython)
+(elpy-use-ipython)
+(setq python-shell-interpreter "ipython"
+      python-shell-interpreter-args "--colors NoColor -i")
 ;;(setq elpy-rpc-backend "jedi")
 ;;(add-hook 'python-mode-hook 'jedi:setup)
 ;;(setq jedi:complete-on-dot t)                 ; optional
