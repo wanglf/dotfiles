@@ -106,6 +106,7 @@
 
 (require 'init-dash)
 (require 'init-ledger)
+(require 'init-textinfo)
 ;; Extra packages which don't require any configuration
 
 (require-package 'gnuplot)
