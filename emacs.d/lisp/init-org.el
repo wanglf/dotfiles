@@ -93,8 +93,11 @@
 
 (setq org-latex-minted-options
       '(("frame" "lines")
-        ;;        ("fontsize" "\\scriptsize")
-        ("linenos" "")))
+        ("fontsize" "\\scriptsize")
+        ("linenos" "false")
+        ("mathescape" "true")
+        ("numbersep" "5pt")
+        ("framesep" "2mm")))
 
 ;; use xelatex to export pdf files
 (setq org-latex-pdf-process
