@@ -8,3 +8,5 @@
   (setenv "MITSCHEME_LIBRARY_PATH" "/Applications/mit-scheme.app/Contents/Resources"))
  ((string-equal system-type "gnu/linux") ; linux
   (setenv "MITSCHEME_LIBRARY_PATH" "/opt/mit-scheme/lib/mit-scheme-x86-64")))
+
+(provide 'init-mitscheme)
