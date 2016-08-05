@@ -1,0 +1,3 @@
+; put under ~/.atom/
+https-proxy = http://websrv:8123
+http-proxy = http://websrv:8123
