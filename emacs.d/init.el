@@ -106,7 +106,7 @@
 
 (require 'init-dash)
 (require 'init-ledger)
-(require 'init-textinfo)
+(require 'init-texinfo)
 (require 'init-mitscheme)
 ;; Extra packages which don't require any configuration
 
