@@ -3,7 +3,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 # enable plugins
-plugins=(git ruby perl python grep vi-mode)
+plugins=(git ruby perl python grep vi-mode jhipster)
 source $ZSH/oh-my-zsh.sh
 
 
