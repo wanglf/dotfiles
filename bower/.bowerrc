@@ -1,0 +1,4 @@
+{
+	"proxy": "http://websrv:8123",
+	"https-proxy": "http://websrv:8123"
+}
