@@ -147,10 +147,15 @@
 (require 'init-locales)
 
 (add-hook 'after-init-hook
-		  (lambda ()
-			(message "init completed in %.2fms"
-					 (sanityinc/time-subtract-millis after-init-time before-init-time))))
+          (lambda ()
+            (message "init completed in %.2fms"
+                     (sanityinc/time-subtract-millis after-init-time before-init-time))))
 
+
+;;----------------------------------------------------------------------------
+;; meta key:  set option key to meta under cocoa emacs
+;;----------------------------------------------------------------------------
+(setq ns-option-modifier 'meta)
 
 (provide 'init)
 
