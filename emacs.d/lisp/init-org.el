@@ -242,10 +242,10 @@ typical word processor."
 
 
 (setq org-agenda-files
-      '("~/git/private.org.git/inbox.org"
-        "~/git/private.org.git/task.org"
-        "~/git/private.org.git/project.org"
-        "~/git/private.org.git/finished.org"))
+      '("~/git/private.org.git/task/inbox.org"
+        "~/git/private.org.git/task/task.org"
+        "~/git/private.org.git/task/project.org"
+        "~/git/private.org.git/task/finished.org"))
 
 
 ;;; Agenda views
