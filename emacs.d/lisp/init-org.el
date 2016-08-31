@@ -186,11 +186,11 @@ typical word processor."
 (global-set-key (kbd "C-c c") 'org-capture)
 
 (setq org-capture-templates
-      `(("t" "Todo" entry (file "/opt/git/private.org.git/inbox.org")  ; "" => org-default-notes-file
+      `(("t" "Todo" entry (file "/opt/git/private.org.git/task/inbox.org")  ; "" => org-default-notes-file
          "* NEXT %?\n%U\n" :clock-resume t)
-        ("n" "Note" entry (file "/opt/git/private.org.git/note.org")
+        ("n" "Note" entry (file "/opt/git/private.org.git/task/note.org")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
-        ("j" "Journal" entry (file+datetree "/opt/git/private.org.git/journal.org")
+        ("j" "Journal" entry (file+datetree "/opt/git/private.org.git/task/journal.org")
          "* %?")
         ))
 
@@ -232,25 +232,21 @@ typical word processor."
 ;;; To-do settings
 
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)")
-              (sequence "PROJECT(p)" "|" "DONE(d!/!)" "CANCELLED(c@/!)")
-              (sequence "WAITING(w@/!)" "HOLD(h)" "|" "CANCELLED(c@/!)"))))
+      (quote ((sequence "TODO(t)" "NEXT(n)" "|" "DONE(d!/!)"))))
 
 (setq org-todo-keyword-faces
       (quote (("NEXT" :inherit warning)
-              ("PROJECT" :inherit font-lock-string-face))))
+              ("DONE" :inherit font-lock-string-face))))
 
 
 (setq org-agenda-files
-      '("~/git/private.org.git/task/inbox.org"
-        "~/git/private.org.git/task/task.org"
-        "~/git/private.org.git/task/project.org"
+      '("~/git/private.org.git/task/task.org"
         "~/git/private.org.git/task/finished.org"))
 
 
 ;;; Agenda views
 
-(setq-default org-agenda-clockreport-parameter-plist '(:link t :maxlevel 3))
+(setq-default org-agenda-clockreport-parameter-plist '(:link t :maxlevel 4))
 
 
 (let ((active-project-match "-INBOX/PROJECT"))
@@ -456,7 +452,5 @@ typical word processor."
      (shell . t)
      (sql . nil)
      (sqlite . t))))
-
-
 
 (provide 'init-org)
