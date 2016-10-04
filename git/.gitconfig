@@ -10,3 +10,5 @@
     push-for-review = push gerrit HEAD:refs/for/master
 [core]
 	editor = vim
+[push]
+	default = simple
