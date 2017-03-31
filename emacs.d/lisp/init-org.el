@@ -448,6 +448,7 @@ typical word processor."
      (perl . t)
      (python . t)
      (ruby . t)
+     (scheme . t)
      (screen . nil)
      (shell . t)
      (sql . nil)
