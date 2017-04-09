@@ -42,11 +42,13 @@
 (require-package 'diminish)
 (require-package 'scratch)
 (require-package 'mwe-log-commands)
+(require-package 'neotree)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
 ;;(require 'init-themes)
 (require 'init-osx-keys)
+(require 'init-neotree)
 (require 'init-gui-frames)
 (require 'init-proxies)
 (require 'init-dired)
